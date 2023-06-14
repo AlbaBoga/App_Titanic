@@ -26,7 +26,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 #----------------------------CONFIGURACIÓN DE PÁGINAS----------------------------#
 
 #---------------------------------------------------------------COSAS QUE VAMOS A USAR EN TODA LA APP---------------------------------------------------------------#
-titanic = pd.read_csv(r"E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\datos\titanic.csv")
+titanic = pd.read_csv(r"data\titanic.csv")
 
 #---------------------------------------------------------------COSAS QUE VAMOS A USAR EN TODA LA APP---------------------------------------------------------------#
 
@@ -34,7 +34,7 @@ titanic = pd.read_csv(r"E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data A
 #--------------------------------------TÍTULO-------------------------------------#
 col1,col2,col3 = st.columns(3)
 with col2:
-    image2 = Image.open(r'E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\Notebooks_ejercicios\Titanic_Streamlit\img\logo1.webp')
+    image2 = Image.open(r'img\logo1.webp')
     st.image(image2, width=250)
 st.title('Análisis de los pasajeros del Titanic')
 st.markdown(
@@ -92,7 +92,7 @@ Info: https://www.noaa.gov/gc-international-section/rms-titanic-history-and-sign
 
 
 #--------------------------------------SIDEBAR-------------------------------------#
-image1 = Image.open(r'E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\Notebooks_ejercicios\Titanic_Streamlit\img\logo.png')
+image1 = Image.open(r'img\logo.png')
 st.sidebar.image(image1)
 
 #--------------------------------------SIDEBAR-------------------------------------#

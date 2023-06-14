@@ -21,12 +21,12 @@ from PIL import Image
 st.set_page_config(page_title='Conclusiones', page_icon='📓', layout='centered')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-image2 = Image.open(r'E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\Notebooks_ejercicios\Titanic_Streamlit\img\hundido.jpg')
+image2 = Image.open(r'img\hundido.jpg')
 st.image(image2, width=500)
 
 st.title('Conclusiones')
 
-image1 = Image.open(r'E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\Notebooks_ejercicios\Titanic_Streamlit\img\logo.png')
+image1 = Image.open(r'img\logo.png')
 st.sidebar.image(image1)
 
 st.markdown(

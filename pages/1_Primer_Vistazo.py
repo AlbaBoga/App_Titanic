@@ -21,11 +21,11 @@ from PIL import Image
 st.set_page_config(page_title='Primer Vistazo', page_icon='📈', layout='centered')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-titanic = pd.read_csv(r"E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\datos\titanic.csv")
+titanic = pd.read_csv(r"data\titanic.csv")
 
 st.title('Primer vistazo de los datos')
 
-image1 = Image.open(r'E:\COPIA_DAWN\DAWN\CURSOSYLIBROS\Data\Upgrade Hub Data Analytics Bootcamp\Tareas\Module1_0_SoftSkillsProyecto\Notebooks_ejercicios\Titanic_Streamlit\img\logo.png')
+image1 = Image.open(r'img\logo.png')
 st.sidebar.image(image1)
 
 
