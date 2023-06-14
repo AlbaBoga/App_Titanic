@@ -194,7 +194,7 @@ with col1:
 with col2:
     enlace = "https://es.wikipedia.org/wiki/Instalaciones_de_primera_clase_del_RMS_Titanic"
     texto_web = requests.get(enlace).text
-    sopa = BeautifulSoup(texto_web, 'html5')
+    sopa = BeautifulSoup(texto_web, 'html.parser')
     sopa.prettify()
     camarote_lujo = sopa.find_all('table', class_= 'wikitable')
     camarotes = camarote_lujo[0]
