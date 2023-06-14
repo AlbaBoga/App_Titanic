@@ -23,11 +23,11 @@ from PIL import Image
 st.set_page_config(page_title='Observaciones', page_icon='🔬', layout='wide')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-titanic = pd.read_csv(r"data\preprocesado.csv")
+titanic = pd.read_csv("data/preprocesado.csv")
 
 st.title('Observaciones')
 
-image1 = Image.open(r'img\logo.png')
+image1 = Image.open('img/logo.png')
 st.sidebar.image(image1)
 
 
