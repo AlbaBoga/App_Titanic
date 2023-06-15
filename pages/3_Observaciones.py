@@ -354,6 +354,14 @@ with col1:
                   template='plotly_dark')
     st.plotly_chart(fig8)
 
+    
+    titulos_clase=titanic.groupby('Pclass')['Título'].value_counts()
+    titulos_clase_pct=pd.DataFrame(titulos_clase.apply(lambda x:(x*100)/titulos_clase.sum())).reset_index()
+    fig19=px.histogram(titulos_clase_pct, x="count", y="Pclass", color="Título", labels={'Pclass':'Clase del barco','count':'Porcentaje de Pasajeros'},barmode='group',orientation='h')
+    fig19.update_layout(height=500, width=800, title_text="Distribución de pasajeros por clase y nivel", 
+                  template='plotly_dark')
+    st.plotly_chart(fig19)
+
 with col2:
     titulos_level=titanic.groupby('Level')['Título'].value_counts()
     titulos_level_pct=pd.DataFrame(titulos_level.apply(lambda x:(x*100)/titulos_level.sum())).reset_index()
@@ -362,13 +370,30 @@ with col2:
                   template='plotly_dark')
     st.plotly_chart(fig9)
 
+col1,col2,col3 =st.columns(3)
+with col2:
+    fare_titles=titanic.groupby(['Pclass','Título', 'Embarked'])['Fare'].mean().reset_index()
+    fig20 = px.strip(fare_titles, x="Título", y="Fare", template="plotly_dark", color='Pclass')
+
+    fig20.update_layout(
+    title='Distribución por título, clase y pago de billete',
+    xaxis=dict(title='Media pagada'),
+    yaxis=dict(title='Título')
+)
+    st.plotly_chart(fig20)
+
+
+
 st.markdown(
             """
 De las siguientes gráficas se han podido observar los siguientes datos:
 * Más de un ``58%`` de los títulos pertenecientes a los pasajeros del barco eran Mr.
 * Había un mayor porcentaje de ``mujeres solteras`` en el barco, que poseían el título Miss.
-* Algunos de los títulos minoritarios presentes en la gráfica, hacen referencia a gente de ``primera clase``.
-* La mayoría de estos títulos minoritarios se alojaban en el nivel `B` y `C`, donde se encontraban las cabinas de lujo del barco.
+* Hay un total de 15 títulos, ``12 de ellos minoritarios``, que hacen referencia a gente de ``primera clase``.
+* Estos títulos minoritarios se alojaban en el nivel `B` y `C`, donde se encontraban las cabinas de lujo del barco.
+* ``Primera clase`` pagó los precios más caros por los billetes.
+* Segunda y tercera clase pagaron de media una cantidad más igualada entre títulos, mientras que en primera clase los precios varían considerablemente.
+* Se aprecia un valor atípico en el título `Jonkheer`, el cuál no pagó nada por su billete.
         """
         )
 
@@ -419,6 +444,8 @@ with col1:
     fig10.update_layout(height=650, width=800, title_text="Distribución del estado de pasajeros", 
                   template='plotly_dark')
     st.plotly_chart(fig10)
+
+
 
 with col2:
     bajas_clases=titanic.groupby('Pclass')['Estado'].value_counts()
