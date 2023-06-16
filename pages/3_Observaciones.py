@@ -332,6 +332,9 @@ Procedimiento:
 * Esta columna recoje los títulos de los pasajeros, presentes en el nombre, justo después del apellido.
 * Se ha creado una gráfica donde se representa el número de pasajeros que tenían los títulos encontrados.
 * En la segunda gráfica se han distribuído los títulos segun los diferentes niveles del barco.
+* En la tercera gráfica se han representado los títulos dentro de las diferentes clases del barco.
+* En la cuarta gráfica se ha representado el precio medio gastado por billete según el título y la clase.
+* En la quinta gráfica se representa el porcentaje de supervivencia de los pasajeros de primera clase agrupados por título.
         """
         )
 code = """
@@ -370,8 +373,8 @@ with col2:
                   template='plotly_dark')
     st.plotly_chart(fig9)
 
-col1,col2,col3 =st.columns(3)
-with col2:
+col1,col2 =st.columns(2)
+with col1:
     fare_titles=titanic.groupby(['Pclass','Título', 'Embarked'])['Fare'].mean().reset_index()
     fig20 = px.strip(fare_titles, x="Título", y="Fare", template="plotly_dark", color='Pclass')
 
@@ -381,6 +384,15 @@ with col2:
     yaxis=dict(title='Título')
 )
     st.plotly_chart(fig20)
+
+with col2:
+    titulos=titanic[titanic['Pclass']==1].groupby('Survived')[['Survived','Título']].value_counts()
+    titulos_pct=pd.DataFrame(titulos.apply(lambda x:(x*100)/titulos.sum())).reset_index()
+    fig21=px.histogram(titulos_pct, x="Survived", y="count", color="Título",labels={'Título':'Título del pasajero','count':'Porcentaje de Pasajeros','Survived':'Supervivencia'})
+    fig21.update_layout(height=500, width=800, title_text="Distribución de pasajeros por títulos", 
+                  template='plotly_dark')
+    st.plotly_chart(fig21)
+
 
 
 
@@ -394,6 +406,8 @@ De las siguientes gráficas se han podido observar los siguientes datos:
 * ``Primera clase`` pagó los precios más caros por los billetes.
 * Segunda y tercera clase pagaron de media una cantidad más igualada entre títulos, mientras que en primera clase los precios varían considerablemente.
 * Se aprecia un valor atípico en el título `Jonkheer`, el cuál no pagó nada por su billete.
+* Se observa que la mayor parte de los títulos de primera clase, que además pagaron más por su billete, sobrevivieron.
+
         """
         )
 

@@ -45,8 +45,22 @@ filtro_survived= st.sidebar.multiselect("Estado", titanic["Survived"].unique())
 if filtro_survived:
     titanic = titanic[titanic["Survived"].isin(filtro_survived)]
 
+filtro_sib= st.sidebar.multiselect("Hermanos/Cónyuge", titanic['SibSp'].unique())
+if filtro_sib:
+    titanic = titanic[titanic['SibSp'].isin(filtro_sib)]
+
+filtro_par= st.sidebar.multiselect("Padres/Hijos", titanic['Parch'].unique())
+if filtro_par:
+    titanic = titanic[titanic['Parch'].isin(filtro_par)]
+
 st.dataframe(titanic)
 
+genero=titanic.groupby('Sex')[['Survived', 'Pclass',
+       'Sex', 'SibSp', 'Parch', 'Embarked']].value_counts().reset_index()
+fig1=px.histogram(genero, x="Sex", y="count", color="Sex",labels={'Sex':'Género','count':'Número de Pasajeros'})
+fig1.update_layout(height=500, width=800, title_text="Distribución de pasajeros", 
+                  template='plotly_dark')
+st.plotly_chart(fig1)
 
 st.markdown(
                 """

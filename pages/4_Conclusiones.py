@@ -36,6 +36,7 @@ st.markdown(
 * Los valores atípicos dentro de la columna `Fare`, que se correspondían con los precios más caros de los billetes, hacían referencia a los pasajeros que se alojaban en los camarotes más lujosos del barco.
 * La mayoría de pasajeros en tercera clase eran adultos de entre ``19 y 38 años``, mientras que la mayoría de pasajeros entre ``42 y 80 años``, eran de primera clase, lo cuál hace referencia a la disparidad de recursos entre las clases.
 * La mayoría de pasajeros pagaron entre ``5 y 15 libras`` por sus billetes, mientras que lo máximo pagado fue ``512 libras``.
+* Se observa una relación entre la supervivencia, el precio pagado por el billete, el nivel del barco donde se alojaban y los títulos nobiliarios.
 * El ``65%`` de los pasajeros era de género masculino y sólo sobrevivió el ``13%`` de ellos, es decir, ``116 personas de 891 pasajeros``.
 * De las mujeres sólo falleció un ``9%``, es decir, ``80 personas de 891 pasajeros``.
 * El ``mayor porcentaje de supervivencia`` se correspondía con los pasajeros de género fememnino y la primera clase, mientras que ``el menor``, con la tercera clase y los de género masculino.
