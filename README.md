@@ -1,6 +1,5 @@
 # App_Titanic
-[Aplicación en Streamlit]
-(https://alba-app-titanic.streamlit.app/)
+[Aplicación en Streamlit](https://alba-app-titanic.streamlit.app/)
 
 # **Titanic**
 
