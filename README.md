@@ -21,7 +21,7 @@ Procedimiento realizado:
 * Búsqueda de valores nulos
     - Relleno valores nulos en columna `Cabin`
     - Relleno valores nulos en columna `Embarked`
-    - Relleno valores nulos en columna `Age`
+    - Relleno valores nulos en columna `Age, (regresión KNN)`
     - Comprobación
 * Limpieza de columnas
     - Observación preliminar de los datos
