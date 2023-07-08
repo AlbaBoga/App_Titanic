@@ -66,6 +66,8 @@ st.markdown(
     - Fallecidos vs Supervivientes
     - Pasajeros que viajaron solos vs acompañados
     - Correlaciones entre variables
+* Modelo de regresión para estimación de precio de billetes
+* Modelo de clasificación para estimación de supervivencia de pasajeros
 * Conclusiones
         """
         )
