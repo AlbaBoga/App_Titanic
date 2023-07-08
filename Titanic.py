@@ -82,6 +82,7 @@ Procedimiento realizado:
 - Primero se ha echado un primer vistazo a los datos.
 - Seguidamente se ha realizado un trabajo de preprocesamiento de los datos donde se han buscado valores nulos, valores duplicados y, finalmente, se ha hecho una limpieza de las columnas pertinentes.
 - Como tercer paso, se ha realizado una observación de los datos a través de diferentes gráficas, tablas y agrupaciones de datos.
+- Depués,se ha implementado un modelo de clasificación para la estimación de la supervivencia de los pasajeros y un modelo de regresión para la estimación del precio de los billetes.
 - Finalmente, se han resumido las conclusiones más importantes en base a esas observaciones.
 
 Info: https://www.noaa.gov/gc-international-section/rms-titanic-history-and-significance#:~:text=The%20sinking%20of%20Titanic%20was,to%20improve%20safety%20of%20navigation%20.
